@@ -1,0 +1,58 @@
+#include "palette.h"
+
+uint16_t gamePalette[] = {
+        0x9200,
+        0xc009,
+        0x0580,
+        0x4040,
+        0xd000,
+        0x4068,
+        0x7500,
+        0x0875,
+        0xffff,
+        0xffff,
+        0x53ff,
+        0xa4c8,
+        0xacac,
+        0xacac,
+        0x9975,
+        0x752c,
+};
+
+uint16_t titlePalette[] = {
+        0x0900,
+        0x0909,
+        0x0909,
+        0x0500,
+        0xc405,
+        0x40a0,
+        0x4000,
+        0x68d0,
+        0xffff,
+        0xedc8,
+        0x92a0,
+        0x1313,
+        0xffff,
+        0x00ff,
+        0xacac,
+        0xacac,
+};
+
+uint16_t endScreenPalette[] = {
+        0x0009,
+        0x9280,
+        0x0000,
+        0x0000,
+        0x0000,
+        0x0000,
+        0x0000,
+        0x0000,
+        0xffff,
+        0xffff,
+        0xffff,
+        0xffff,
+        0xffff,
+        0xffff,
+        0xffff,
+        0xffff,
+};
