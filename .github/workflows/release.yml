@@ -21,11 +21,19 @@ jobs:
           sudo snap alias z88dk.z88dk-ticks z88dk-ticks
           sudo snap alias z88dk.z88dk-dis z88dk-dis
           sudo snap alias z88dk.z88dk-appmake z88dk-appmake
-      - name: Build PTP
-        run: make
+      - name: Setup ptp2wav
+        run: |
+          sudo apt-get install -y fpc
+          wget https://raw.githubusercontent.com/vargaviktor/primotools/master/win32/PTP2WAV.PAS
+          fpc PTP2WAV.PAS
+          sudo mv PTP2WAV /usr/local/bin/ptp2wav
+      - name: Build
+        run: make wav
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
-          files: raktaros.ptp
+          files: |
+            raktaros.ptp
+            raktaros.wav
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
