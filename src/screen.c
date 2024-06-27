@@ -47,9 +47,10 @@ void setPalette(uint16_t* palette) {
     }
 
     for (uint8_t i = 0; i < 16; i++) {
-        wpoke(PALETTE_ADDR + i * 2, palette[i]);
-        wpoke(PALETTE_ADDR + 0x20 + i * 2, palette[i]);
-        wpoke(PALETTE_ADDR + 0x40 + i * 2, palette[i]);
+        // the palette is actually inverted on original hardware
+        wpoke(PALETTE_ADDR + i * 2, ~palette[i]);
+        wpoke(PALETTE_ADDR + 0x20 + i * 2, ~palette[i]);
+        wpoke(PALETTE_ADDR + 0x40 + i * 2, ~palette[i]);
     }
 
     // select the first palette

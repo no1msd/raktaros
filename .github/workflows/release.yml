@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: Setup z88dk
         run: |
-          sudo snap install --edge z88dk
+          sudo snap install --beta z88dk
           sudo snap alias z88dk.zcc zcc
           sudo snap alias z88dk.z88dk-z80asm z88dk-z80asm
           sudo snap alias z88dk.z88dk-ticks z88dk-ticks
